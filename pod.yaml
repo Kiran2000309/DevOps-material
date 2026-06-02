@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-c
+    image: mysql:latest
+    ports:
+    - containerPort: 3306
+    env:
+      - name: "MYSQL_ROOT_PASSWORD"
+        value: "redhat"
+      - name: "USER_NAME"
+        value: "kiran"
+      - name: "AGE"
+        value: "25"

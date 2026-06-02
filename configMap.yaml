@@ -1,0 +1,8 @@
+apiversion: v1
+kind: configMap
+metadata:
+  name: my-cred
+data:
+  PASSWORD: "redhat"
+  USERNAME: "kiran"
+  CITY: "Jalgaon"

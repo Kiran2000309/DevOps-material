@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-c
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+    resources:
+      request:
+        cpu: 100m
+        memory: 200m
+      limits:
+        cpu: 200m
+        memory: 400m

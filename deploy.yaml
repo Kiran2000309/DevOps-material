@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: my-Deploy
+  labels:
+    app: demo-app
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec: 
+      containers:
+        -  name: my-containers
+           image: nginx:latest
+           ports:
+             - containerPort: 80
+  replicas: 3
+  selector:
+    matchExpression:
+      - {key: app, Operator: In, values: [my-rs-app,cbz-ap]}     
+  strategy:
+    rule: RollingUpdate     
