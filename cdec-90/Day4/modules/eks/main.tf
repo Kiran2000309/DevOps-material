@@ -90,7 +90,7 @@ resource "aws_eks_node_group" "my_node_group" {
     node_group_name = "my-node-group"
     node_role_arn   = aws_iam_role.node_role.arn
     subnet_ids      = data.aws_subnets.my_subnets.ids
-
+    instance types     = ["t3.medium"]
     scaling_config {
         desired_size = 2
         max_size     = 2
@@ -108,3 +108,4 @@ resource "aws_eks_node_group" "my_node_group" {
           aws_iam_role_policy_attachment.container_registry_policy_attachment
     ]
 }
+
